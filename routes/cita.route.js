@@ -18,7 +18,7 @@ citaRoute.route("/").get((req, res) => {
   }); 
   
   //CREAR CITA
-   citaRoute.route("https://app-barber-center.herokuapp.com/create-appointment").post((req, res, next) => { 
+   citaRoute.route("/create-appointment").post((req, res, next) => { 
     CitaModel.create(req.body, (error, data) => { 
       if (error) {
         console.log('hola mundo') 
@@ -34,7 +34,7 @@ citaRoute.route("/").get((req, res) => {
   
   
   //EDITAR-CITA
-  citaRoute.route("https://app-barber-center.herokuapp.com//edit-appointment/:id").get((req, res) => { 
+  citaRoute.route("/edit-appointment/:id").get((req, res) => { 
     CitaModel.findById(req.params.id, (error, data, next) => { 
       if (error) { 
         console.log(error); 
@@ -47,7 +47,7 @@ citaRoute.route("/").get((req, res) => {
   
    
   // ACTUALIZAR CITA
-  citaRoute.route("https://app-barber-center.herokuapp.com//update-appointment/:id").put((req, res, next) => { 
+  citaRoute.route("/update-appointment/:id").put((req, res, next) => { 
     CitaModel.findByIdAndUpdate( 
       req.params.id, 
       { 
@@ -67,7 +67,7 @@ citaRoute.route("/").get((req, res) => {
        
       
   //ELIMINAR CITA 
-      citaRoute.route("https://app-barber-center.herokuapp.com//delete-appointment/:id").delete((req, res, next) => { 
+      citaRoute.route("/delete-appointment/:id").delete((req, res, next) => { 
         CitaModel.findByIdAndRemove(req.params.id, (error, data) => { 
           if (error) { 
             return next(error); 
