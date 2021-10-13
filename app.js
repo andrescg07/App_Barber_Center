@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 // Rutas
 app.get('/', (req, res) => {
 //  res.send('Hello World!');
-window.location="https://app-barber-center.herokuapp.com/home"
+this.$router.push("/");
 });
 
 app.use('/api', require('./routes/cita.route'));
