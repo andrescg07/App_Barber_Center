@@ -26,10 +26,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // app.use(express.static(path.join(__dirname, 'public')));
 // Rutas
-app.get('/', (req, res) => {
-//  res.send('Hello World!');
-this.$router.push("/");
-});
+// app.get('/', (req, res) => {
+// //  res.send('Hello World!');
+
+// });
 
 app.use('/api', require('./routes/cita.route'));
 // Middleware para Vue.js router modo history
